@@ -1,0 +1,148 @@
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flexColumnCenter {
+  @include flexColumn;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexColumnStartEnd {
+  @include flexColumn;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+@mixin flexColumnStartCenter {
+  @include flexColumn;
+  justify-content: center;
+  align-items: flex-start;
+}
+@mixin flexRowCenter {
+  @include flexRow;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexRowSpaceBetween {
+  @include flexRow;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexRowSpaceAround {
+  @include flexRow;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin navigation{
+  width: 100%;
+  position: fixed;
+  height:$nav-height;
+}
+@mixin navLinks{
+  ul {
+    display:flex;
+  }
+  li {
+    padding: 0 1.4em 0 0;
+    font-size: 0.9em;
+  }
+  ul li a {
+    text-decoration: none;
+    color: cc(txt);
+  }
+  li a.active {
+    color:cc(bg);
+    border-bottom: 2px solid cc(link);
+    font-weight: 300;
+  }
+  li a:hover {
+    cursor: pointer;
+    color:cc(link);
+  }
+}
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 420px, $upper-range: 900px) {
+
+  font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+  
+  @media screen and (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+  @media screen and (min-width: $upper-range){
+    font-size: $max-font-size;
+  }
+}
+@mixin dramaShadow{
+	box-shadow: 11px 9px 5px 0 rgba(49, 49, 93, 0.1), 17px 17px 0px 0 rgba(0, 0, 0, 0.08);
+}
+@mixin dramaShadow2{
+	box-shadow: 17px 17px 0px 0 rgba(0, 0, 0, 0.08);
+}
+@mixin btnBoxShadow{
+	box-shadow: 0 2px 5px 0 rgba(49,49,93,.1), 0 1px 2px 0 rgba(0,0,0,.08)
+}
+@mixin btnStartup{
+	font-size: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.18);
+    line-height: 1.5;
+    padding: .5em 2em;
+    border: none;
+    background-image: linear-gradient(-180deg,#80D1F3 0%, #4A90E2 100%);
+    box-shadow: 0 1px 2px 0 rgba(74,144,226,0.44), 0 2px 8px 0 rgba(0,0,0,0.14);
+    border-radius: 6px;
+}
+@mixin hover{
+	transform: translateY(-1px);
+	background-color: rgba(#f2514b, .5);
+	transition: all 225ms cb();
+}
+@mixin transition {
+  transition: all 225ms cb();
+}
+@mixin btnCrisp{
+  font-size: 1rem;
+  color: #3275C3;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  background: #EBF4FF;
+  line-height: 1;
+  padding: .5em 1em;
+  border:1px solid rgba(#3275C3, .3);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);
+  border-radius: 5px;
+}
+@mixin removeBtn {
+  position: absolute;
+  background-color: rgba($bootys-red, 0.21);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  top: -10px;
+  right: -10px;
+  opacity: 0;
+  @include transition;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($bootys-red, 1);
+  }
+  &:before, &:after {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: $ghost-white;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
