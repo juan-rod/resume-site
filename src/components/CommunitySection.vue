@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="community">
   <div class="section-title"> Community </div>
   <section v-for="(ex, index) in community" :key="index">
       <div class="section-body">

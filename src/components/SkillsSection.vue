@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="skills">
   <div class="section-title"> Skills </div>
   <section>
       <div class="section-body">
@@ -8,7 +8,7 @@
           <div class="timeline-circle circle-outer">
             <div class="inner"></div>
           </div>
-          <div class="timeline-line"></div>
+          <!-- <div class="timeline-line"></div> -->
         </div>
         <div class="detail">
           <div class="detail-body">
