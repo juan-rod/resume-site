@@ -3,8 +3,10 @@
   <div class="section-title"> Education </div>
   <section v-for="(ex, index) in education" :key="index">
       <div class="section-body">
-        <div class="date">{{ ex.date }}</div>
-        <div class="timeline">
+        <div class="date">
+          <p>{{ ex.date }}</p>
+        </div>
+        <div class="timeline education">
           <div class="timeline-circle circle-outer">
             <div class="inner"></div>
           </div>

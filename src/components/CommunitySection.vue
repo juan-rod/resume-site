@@ -3,7 +3,9 @@
   <div class="section-title"> Community </div>
   <section v-for="(ex, index) in community" :key="index">
       <div class="section-body">
-        <div class="date">{{ ex.date }}</div>
+        <div class="date">
+          <p>{{ ex.date }}</p>
+        </div>
         <div class="timeline">
           <div class="timeline-circle circle-outer">
             <div class="inner"></div>

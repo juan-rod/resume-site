@@ -1,10 +1,11 @@
 <template>
-  <div class="resume-container border1">
+  <div class="resume-container" :class="{'egg': spin}" >
+    <i class="spin" @dblclick="spin = !spin"></i>
     <header>
       <h2>JuanRodriguez</h2>
       <h6>A Front-End Developer with an expertise in modern HTML - CSS - JavaScript across various frameworks, extensive insight on user interaction, web
-layouts, and responsive design.
-</h6>
+      layouts, and responsive design.
+      </h6>
     </header>
     <main>
       <experience-section :experience="experience"/>
@@ -38,11 +39,18 @@ export default {
     SkillsSection,
     EducationSection,
   },
+  mounted () {
+    setTimeout(() => {
+      // this.show = true
+    }, 1000);
+  },
   data () {
     return {
+      spin: false,
+      show: false,
       experience: [
         {
-          date: 'March 2017 - August 2018',
+          date: 'March 17 - August 18',
           company: 'MediaScience Labs',
           position: 'Front End Developer',
           workList: [
@@ -55,7 +63,7 @@ export default {
           ]
         },
         {
-          date: 'March 2016 - Sept 2017',
+          date: 'March 16 - Sept 17',
           company: 'DCR Point-of-Sales Systems',
           position: 'Associate Developer',
           workList: [
@@ -68,7 +76,7 @@ export default {
       ],
       education: [
         {
-          date: 'July 2015 - Dec 2015',
+          date: 'July 15 - Dec 15',
           school: 'Nashville Software School',
           subtitle: 'Web Developer',
           workList: [
@@ -79,14 +87,14 @@ export default {
           ]
         },
         {
-          date: 'August 2006 - Dec 2010',
+          date: 'August 06 - Dec 10',
           school: 'Texas State University',
           subtitle: 'B.A. in Theatre'
         },
       ],
       community: [
         {
-          date: 'March 2017 - August 2019',
+          date: 'March 17 - August 19',
           position: 'Technology Director',
           org: 'The Austin Gay and Lesbian Pride Foundation'
         }
@@ -108,3 +116,23 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.fadeOne-enter-active, .fadeOne-leave-active {
+  transition: all .5s ease-out;
+}
+.fadeOne-enter, .fadeOne-leave-to {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transform: translate(0%, 100%);
+}
+// .fadeOne {
+//     &-enter-active,
+//     &-leave-active {
+//       transition: all .5s ease-out;
+//     }
+//     &-enter,
+//     &-leave-to {
+//       clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+//       transform: translate(0%, 100%);
+//     }
+//   }
+</style>

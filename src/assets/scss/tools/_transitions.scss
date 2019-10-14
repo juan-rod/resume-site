@@ -33,4 +33,24 @@
     &-enter{ transform: translateZ( -50px) rotateY( -25deg);}
     &-leave-to {  transform: translateZ( -50px) rotateY( 0deg); }
   }
+  &--fadeOne {
+    &-enter-active,
+    &-leave-active {
+      transition: all .5s ease-out;
+    }
+    &-enter,
+    &-leave-to {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+      transform: translate(0%, 100%);
+    }
+  }
 }
+
+
+// .fadeOne-enter-active, .fadeOne-leave-active {
+//   transition: all .5s ease-out;
+// }
+// .fadeOne-enter, .fadeOne-leave-to {
+//   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+//   transform: translate(0%, 100%);
+// }
