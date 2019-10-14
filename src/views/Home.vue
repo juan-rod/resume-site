@@ -2,7 +2,9 @@
   <div class="resume-container border1">
     <header>
       <h2>JuanRodriguez</h2>
-      <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi fugit voluptatum hic nesciunt soluta harum, sed assumenda aspernatur consectetur ipsa cupiditate impedit facere libero quo nemo explicabo dolor repudiandae temporibus.</h6>
+      <h6>A Front-End Developer with an expertise in modern HTML - CSS - JavaScript across various frameworks, extensive insight on user interaction, web
+layouts, and responsive design.
+</h6>
     </header>
     <main>
       <experience-section :experience="experience"/>
